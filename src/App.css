@@ -1,3 +1,50 @@
 .logo-bar {
   width: 10%;
 }
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+.gallery {
+  --g: 0px; /* the gap */
+
+  display: grid;
+  clip-path: inset(1px); /* to avoid visual glitchs */
+  margin: auto;
+  justify-content: center;
+}
+.gallery > img {
+  --_p: calc(-1 * var(--g));
+  grid-area: 1/1;
+  width: 100%; /* control the size */
+  cursor: pointer;
+  transition: 0.4s 0.1s;
+}
+.gallery > img:first-child {
+  clip-path: polygon(
+    0 0,
+    calc(50% + var(--_p)) 0,
+    calc(50% + var(--_p)) 100%,
+    0 100%
+  );
+}
+.gallery > img:last-child {
+  clip-path: polygon(
+    calc(50% - var(--_p)) 0,
+    100% 0,
+    100% 100%,
+    calc(50% - var(--_p)) 100%
+  );
+}
+.gallery:hover > img:last-child,
+.gallery:hover > img:first-child:hover {
+  --_p: calc(50% - var(--g));
+}
+.gallery:hover > img:first-child,
+.gallery:hover > img:first-child:hover + img {
+  --_p: calc(-50% - var(--g));
+}
