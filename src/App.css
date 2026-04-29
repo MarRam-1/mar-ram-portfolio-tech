@@ -1,17 +1,13 @@
 .logo-bar {
-  width: 10%;
+  width: 5%;
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 80%;
+  width: 100%;
 }
 
 .gallery {
   --g: 0px; /* the gap */
-
   display: grid;
   clip-path: inset(1px); /* to avoid visual glitchs */
   margin: auto;
@@ -47,4 +43,332 @@ header {
 .gallery:hover > img:first-child,
 .gallery:hover > img:first-child:hover + img {
   --_p: calc(-50% - var(--g));
+}
+
+.view {
+  --slice: 4vw; /* ancho de cada slice, ajusta este valor a tu gusto */
+
+  width: calc(var(--slice) * 5); /* 5 slices = ancho total */
+  height: calc(
+    var(--slice) * 3.8
+  ); /* mantiene proporción similar al original */
+  margin: 10px 0px 0px;
+  position: relative;
+  border: 3px solid #fff;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  background: #333;
+  perspective: 500px;
+  background-size: 100%;
+}
+
+.view:hover img {
+  left: -85px;
+}
+
+.view div.view-back {
+  background: #666;
+}
+
+.view .slice {
+  width: var(--slice);
+  height: 100%;
+  z-index: 100;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 150ms ease-in-out;
+  background-size: calc(var(--slice) * 5) 100%; /* ← esta es la línea clave */
+  background-repeat: no-repeat;
+}
+
+.view div.view-back {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background: #666;
+  z-index: 0;
+}
+
+.view-back span {
+  display: block;
+  float: right;
+  padding: 5px 20px 5px;
+  width: 100%;
+  text-align: right;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.view-back span:first-child {
+  padding-top: 20px;
+}
+
+.view-back a {
+  display: bock;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.view-back a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.view-back span[data-icon]:before {
+  content: attr(data-icon);
+  font-family: "icons";
+  color: #aaa;
+  color: rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+  padding-right: 5px;
+}
+
+.view .s2,
+.view .s3,
+.view .s4,
+.view .s5 {
+  -webkit-transform: translate3d(var(--slice), 0, 0);
+  -moz-transform: translate3d(var(--slice), 0, 0);
+  -o-transform: translate3d(var(--slice), 0, 0);
+  -ms-transform: translate3d(var(--slice), 0, 0);
+  transform: translate3d(var(--slice), 0, 0);
+}
+.view .s1 {
+  background-position: 0px 0px;
+}
+.view .s2 {
+  background-position: calc(var(--slice) * -1) 0px;
+}
+.view .s3 {
+  background-position: calc(var(--slice) * -2) 0px;
+}
+.view .s4 {
+  background-position: calc(var(--slice) * -3) 0px;
+}
+.view .s5 {
+  background-position: calc(var(--slice) * -4) 0px;
+}
+
+.view .overlay {
+  width: var(--slice);
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: opacity 150ms ease-in-out;
+  -moz-transition: opacity 150ms ease-in-out;
+  -o-transition: opacity 150ms ease-in-out;
+  -ms-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
+.viewFold:hover .overlay {
+  opacity: 1;
+}
+
+.viewFold img {
+  position: absolute;
+  z-index: 0;
+  -webkit-transition: left 0.3s ease-in-out;
+  -o-transition: left 0.3s ease-in-out;
+  -moz-transition: left 0.3s ease-in-out;
+  -ms-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+}
+.viewFold:hover .s2 {
+  -webkit-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -45deg);
+  -moz-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -45deg);
+  -o-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -45deg);
+  -ms-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -45deg);
+  transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -45deg);
+}
+.viewFold:hover .s3 {
+  -webkit-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  -moz-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  -o-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  -ms-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+}
+.viewFold:hover .s5 {
+  -webkit-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  -moz-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  -o-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  -ms-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+  transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, 90deg);
+}
+.viewFold:hover .s4 {
+  -webkit-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -90deg);
+  -moz-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -90deg);
+  -o-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -90deg);
+  -ms-transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -90deg);
+  transform: translate3d(calc(var(--slice) - 1px), 0, 0)
+    rotate3d(0, 1, 0, -90deg);
+}
+
+.viewFold .s1 > .overlay {
+  background: -moz-linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -o-linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.viewFold .s2 > .overlay {
+  background: -moz-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background: -o-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background: -ms-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+.viewFold .s3 > .overlay {
+  background: -moz-linear-gradient(
+    to to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background: -webkit-linear-gradient(
+    to to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background: -o-linear-gradient(
+    to to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background: -ms-linear-gradient(
+    to to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.viewFold .s4 > .overlay {
+  background: -moz-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -o-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.viewFold .s5 > .overlay {
+  background: -moz-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -o-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
