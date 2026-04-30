@@ -10,6 +10,8 @@ export default function ProjectCard({ img, title, url, description }) {
           </a>
         </div>
 
+        <span className="touch-hint material-symbols-outlined">ads_click</span>
+
         <div className="slice s1" style={{ backgroundImage: `url(${img})` }}>
           <span className="overlay"></span>
 

@@ -1,6 +1,18 @@
 @media (max-width: 991px) {
+  .touch-hint {
+    display: block;
+  }
+
   .navbar-nav {
     text-align: right;
+  }
+
+  .nav-item .nav-link {
+    font-weight: 400 !important;
+  }
+
+  .active .nav-link {
+    font-weight: 500 !important;
   }
 
   .logo-bar {

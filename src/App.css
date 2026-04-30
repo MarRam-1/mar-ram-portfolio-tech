@@ -7,6 +7,22 @@ header {
   width: 100%;
 }
 
+.navbar {
+  background-color: rgba(238, 196, 199, 0.2);
+}
+
+.nav-item .nav-link {
+  color: rgba(219, 106, 139, 0.5) !important;
+  font-weight: 500 !important;
+}
+.nav-link:hover {
+  color: #01388b !important;
+}
+.active .nav-link {
+  color: rgba(219, 106, 139, 0.9) !important;
+  font-weight: 600 !important;
+}
+
 .gallery {
   --g: 0px; /* the gap */
   display: grid;
@@ -83,6 +99,24 @@ header {
   overflow: hidden;
   background: none;
   background-size: 100%;
+}
+
+.touch-hint {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 200;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 2rem;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+  transition: opacity 0.2s ease;
+}
+
+.viewFold:hover .touch-hint {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .view:hover img {
