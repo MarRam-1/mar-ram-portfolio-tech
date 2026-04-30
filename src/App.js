@@ -1,4 +1,6 @@
 import "./App.css";
+import "./Media.css";
+
 import Navbar from "./Navbar";
 import Header from "./Header";
 import TopProjects from "./TopProjects";

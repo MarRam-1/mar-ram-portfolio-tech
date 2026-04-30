@@ -1,48 +1,38 @@
 import React from "react";
-import DictionaryImg from "./1.png";
 
-export default function ProjectCard() {
+export default function ProjectCard({ img, title, url, description }) {
   return (
-    <div className="card shadow ">
-      <div class="view viewFold card-img-top">
-        <div class="view-back">
-          <span>
-            <i class="fa fa-facebook"></i>
-          </span>
-          <span>
-            <i class="fa fa-twitter"></i>
-          </span>
+    <div className="card shadow">
+      <div className="card-img-top view viewFold ">
+        <div className="view-back">
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            VISIT
+          </a>
         </div>
 
-        <div
-          class="slice s1"
-          style={{ backgroundImage: `url(${DictionaryImg})` }}
-        >
-          <span class="overlay"></span>
+        <div className="slice s1" style={{ backgroundImage: `url(${img})` }}>
+          <span className="overlay"></span>
 
-          <div
-            class="slice s2"
-            style={{ backgroundImage: `url(${DictionaryImg})` }}
-          >
-            <span class="overlay"></span>
+          <div className="slice s2" style={{ backgroundImage: `url(${img})` }}>
+            <span className="overlay"></span>
 
             <div
-              class="slice s3"
-              style={{ backgroundImage: `url(${DictionaryImg})` }}
+              className="slice s3"
+              style={{ backgroundImage: `url(${img})` }}
             >
-              <span class="overlay"></span>
+              <span className="overlay"></span>
 
               <div
-                class="slice s4"
-                style={{ backgroundImage: `url(${DictionaryImg})` }}
+                className="slice s4"
+                style={{ backgroundImage: `url(${img})` }}
               >
-                <span class="overlay"></span>
+                <span className="overlay"></span>
 
                 <div
-                  class="slice s5"
-                  style={{ backgroundImage: `url(${DictionaryImg})` }}
+                  className="slice s5"
+                  style={{ backgroundImage: `url(${img})` }}
                 >
-                  <span class="overlay"></span>
+                  <span className="overlay"></span>
                 </div>
               </div>
             </div>
@@ -51,11 +41,8 @@ export default function ProjectCard() {
       </div>
 
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          This is a longer card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text text-justify">{description}</p>
       </div>
     </div>
   );

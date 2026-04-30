@@ -1,5 +1,6 @@
 .logo-bar {
-  width: 5%;
+  height: 60px;
+  width: auto;
 }
 
 header {
@@ -9,7 +10,7 @@ header {
 .gallery {
   --g: 0px; /* the gap */
   display: grid;
-  clip-path: inset(1px); /* to avoid visual glitchs */
+  clip-path: inset(0.1px); /* to avoid visual glitchs */
   margin: auto;
   justify-content: center;
 }
@@ -18,7 +19,7 @@ header {
   grid-area: 1/1;
   width: 100%; /* control the size */
   cursor: pointer;
-  transition: 0.4s 0.1s;
+  transition: 1s 1s;
 }
 .gallery > img:first-child {
   clip-path: polygon(
@@ -45,19 +46,42 @@ header {
   --_p: calc(-50% - var(--g));
 }
 
-.view {
-  --slice: 4vw; /* ancho de cada slice, ajusta este valor a tu gusto */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #db6a8b;
+}
 
-  width: calc(var(--slice) * 5); /* 5 slices = ancho total */
-  height: calc(
-    var(--slice) * 3.8
-  ); /* mantiene proporción similar al original */
-  margin: 10px 0px 0px;
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #db6a8b;
+  opacity: 0.4;
+}
+
+.card {
+  border: none;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: none;
+}
+
+.view {
+  --slice: 20cqw; /* 1/5 del ancho del contenedor — 5 slices cubren el 100% */
+  container-type: inline-size;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0;
   position: relative;
-  border: 3px solid #fff;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
-  background: #333;
-  perspective: 500px;
+  overflow: hidden;
+  background: none;
   background-size: 100%;
 }
 
@@ -66,17 +90,17 @@ header {
 }
 
 .view div.view-back {
-  background: #666;
+  background: #eec4c7;
 }
 
 .view .slice {
-  width: var(--slice);
+  width: calc(var(--slice) + 1px);
   height: 100%;
   z-index: 100;
   transform-style: preserve-3d;
   transform-origin: left center;
   transition: transform 150ms ease-in-out;
-  background-size: calc(var(--slice) * 5) 100%; /* ← esta es la línea clave */
+  background-size: calc(var(--slice) * 5) auto; /* width = ancho total, height proporcional */
   background-repeat: no-repeat;
 }
 
@@ -85,8 +109,12 @@ header {
   height: 100%;
   position: absolute;
   right: 0;
-  background: #666;
+  background: #eec4c7;
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
 }
 
 .view-back span {
@@ -104,30 +132,26 @@ header {
 }
 
 .view-back a {
-  display: bock;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.4);
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  line-height: 22px;
-  text-align: center;
+  color: #db6a8b;
+  font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.25em;
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border: #db6a8b 1px solid;
+  border-radius: 30px;
+  padding: 10px 5px;
 }
 
 .view-back a:hover {
   color: #fff;
-  border-color: #fff;
+  border: #fff 1px solid;
 }
 
 .view-back span[data-icon]:before {
   content: attr(data-icon);
   font-family: "icons";
-  color: #aaa;
   color: rgba(255, 255, 255, 0.2);
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
   padding-right: 5px;
@@ -169,6 +193,10 @@ header {
   -o-transition: opacity 150ms ease-in-out;
   -ms-transition: opacity 150ms ease-in-out;
   transition: opacity 150ms ease-in-out;
+}
+
+.viewFold:hover {
+  perspective: 500px;
 }
 
 .viewFold:hover .overlay {
