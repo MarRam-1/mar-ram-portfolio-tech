@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./MR-logo.png";
+import About from "./About";
 
-export default function Navbar() {
+export default function Navbar(current) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <a className="navbar-brand" href="/">

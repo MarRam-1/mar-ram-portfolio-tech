@@ -434,3 +434,64 @@ header {
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+.footer {
+  background-color: rgba(238, 196, 199, 0.15);
+  border-top: 1px solid rgba(219, 106, 139, 0.2);
+  padding: 40px 0 24px;
+  margin-top: 60px;
+}
+
+.footer-tagline {
+  color: #db6a8b;
+  font-size: 1rem;
+  font-style: italic;
+  max-width: 560px;
+  margin: 0 auto 24px;
+  opacity: 0.85;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.footer-link {
+  color: rgba(219, 106, 139, 0.7);
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  text-decoration: none;
+}
+
+.footer-link-email:hover {
+  color: #db6a8b;
+}
+
+.footer-link-linkedin:hover {
+  color: #0077b5;
+}
+
+.footer-link-github:hover {
+  color: #181717;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.35);
+  margin: 0;
+}
+
+.footer-copy a {
+  color: rgba(219, 106, 139, 0.7);
+  text-decoration: none;
+}
+
+.footer-copy a:hover {
+  color: #01388b;
+}

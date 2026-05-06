@@ -4,6 +4,7 @@ import "./Media.css";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import TopProjects from "./TopProjects";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Header />
       <TopProjects />
+      <Footer />
     </div>
   );
 }
