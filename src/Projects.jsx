@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import ProjectCard from "./ProjectCard";
 import DictionaryImg from "./1.png";
 import CalaveritaImg from "./2.png";
@@ -79,6 +80,10 @@ const projects = [
 export default function Projects() {
   return (
     <div className="projects-page">
+      <Helmet>
+        <title>Projects | Mariana Ramírez — Front-End Developer</title>
+        <meta name="description" content="Explore the projects of Mariana Ramírez — React apps, Python tools, AI-powered experiences, and professional websites." />
+      </Helmet>
       <div className="container">
         <h3 className="section-title mt-5 mb-4">PROJECTS</h3>
         <div className="row">

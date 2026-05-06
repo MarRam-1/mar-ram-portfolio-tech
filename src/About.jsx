@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import profileImg from "./Mar  About BG.png";
 
 const techSkills = [
@@ -47,6 +48,10 @@ const education = [
 export default function About() {
   return (
     <div className="about-page">
+      <Helmet>
+        <title>About | Mariana Ramírez — Front-End Developer & HR Professional</title>
+        <meta name="description" content="Learn about Mariana Ramírez — an HR professional with 8 years of experience and a certified Front-End Developer skilled in React, JavaScript, and Python." />
+      </Helmet>
       <section className="about-intro">
         <div className="container">
           <div className="row align-items-center">
