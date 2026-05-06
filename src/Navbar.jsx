@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "./MR-logo.png";
-import About from "./About";
 
-export default function Navbar(current) {
+export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
-      <a className="navbar-brand" href="/">
+      <Link className="navbar-brand" to="/">
         <img src={logo} alt="Mariana Logo" className="logo-bar" />
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -22,20 +22,20 @@ export default function Navbar(current) {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="/">
-              Home <span className="sr-only">(current)</span>
-            </a>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/about">
               About
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/projects">
               Portfolio
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

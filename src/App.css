@@ -495,3 +495,149 @@ header {
 .footer-copy a:hover {
   color: #01388b;
 }
+
+.about-page {
+  padding-bottom: 60px;
+}
+
+.about-intro {
+  padding: 60px 0 40px;
+}
+
+.about-name {
+  color: #db6a8b;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-name span {
+  font-style: italic;
+}
+
+.about-text p {
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(219, 106, 139, 0.15);
+}
+
+.about-download-btn {
+  background-color: #db6a8b;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 28px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.about-download-btn:hover {
+  background-color: #01388b;
+  color: #fff;
+  text-decoration: none;
+}
+
+.about-cv {
+  padding-top: 20px;
+}
+
+.about-skills-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.skill-tag {
+  background-color: rgba(238, 196, 199, 0.35);
+  color: #db6a8b;
+  border: 1px solid rgba(219, 106, 139, 0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.about-skills-soft {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.about-skills-soft li {
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.about-skills-soft li::before {
+  content: "·";
+  color: #db6a8b;
+  font-size: 1.4rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.about-education {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.edu-year {
+  color: rgba(219, 106, 139, 0.7);
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 90px;
+  padding-top: 2px;
+}
+
+.edu-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #db6a8b;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.edu-info strong {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.95rem;
+}
+
+.edu-info span {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.85rem;
+}

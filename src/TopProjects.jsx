@@ -15,7 +15,7 @@ export default function TopProjects() {
               img={DictionaryImg}
               title="Dictionary App"
               url="https://dictionary-app-mr.netlify.app/"
-              description="A React-based dictionary app that lets users look up word definitions, pronunciations, and examples in real time."
+              description="A React app that let users look up word definitions, pronunciations, and examples in real time."
             />
           </div>
           <div className="col-sm">
