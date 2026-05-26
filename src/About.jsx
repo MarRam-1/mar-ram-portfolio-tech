@@ -91,6 +91,7 @@ export default function About() {
                 src={profileImg}
                 alt="Mariana Ramirez"
                 className="about-photo"
+                loading="lazy"
               />
             </div>
           </div>
