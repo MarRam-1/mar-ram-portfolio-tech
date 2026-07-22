@@ -11,16 +11,13 @@
     font-weight: 400 !important;
   }
 
-  .active .nav-link {
+  .nav-link.active {
     font-weight: 500 !important;
   }
 
   .logo-bar {
     height: 40px;
     width: auto;
-  }
-  .gallery {
-    width: 100% !important;
   }
 
   .top-projects {
@@ -32,5 +29,24 @@
   .section-title {
     margin: 24px 0 !important;
     font-size: 22px !important;
+  }
+
+  .lang-toggle {
+    margin: 8px 0 4px;
+  }
+}
+
+@media (min-width: 992px) {
+  .lang-toggle {
+    margin-left: 12px;
+  }
+}
+
+/* Hero responsive rules now live in Hero.css (component-scoped) */
+@media (min-width: 768px) {
+  .service-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

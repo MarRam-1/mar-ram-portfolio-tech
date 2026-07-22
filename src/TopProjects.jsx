@@ -1,41 +1,42 @@
 import React from "react";
-import CalaveritaImg from "./2.png";
-import WeatherImg from "./3.png";
+import { Link } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
-import DictionaryImg from "./1.png";
+import translations from "./i18n/translations";
+import { useLanguage } from "./context/LanguageContext";
+import { featuredProjects } from "./data/projects";
+import testimonials from "./data/testimonials";
 
 export default function TopProjects() {
+  const { lang } = useLanguage();
+  const t = translations[lang].projectsSection;
+  const findQuote = (title) => testimonials.find((item) => item.business === title)?.quote[lang];
+
   return (
-    <div className="top-projects w-75 m-auto">
-      <h3 className="section-title m-4 mt-5">PROJECT HIGHLIGHTS</h3>
+    <section id="projects" className="top-projects w-75 m-auto">
+      <h3 className="section-title m-4 mt-5">{t.featuredTitle}</h3>
       <div className="container">
         <div className="row">
-          <div className="col-sm">
-            <ProjectCard
-              img={DictionaryImg}
-              title="Dictionary App"
-              url="https://dictionary-app-mr.netlify.app/"
-              description="A React app that let users look up word definitions, pronunciations, and examples in real time."
-            />
-          </div>
-          <div className="col-sm">
-            <ProjectCard
-              img={WeatherImg}
-              title="Forecast App"
-              url="https://react-meteo-app-mariana.netlify.app/"
-              description="A React weather app that displays current conditions and forecasts based on a searched city."
-            />
-          </div>
-          <div className="col-sm">
-            <ProjectCard
-              img={CalaveritaImg}
-              title="Poem Generator"
-              url="https://funny-calaverita-generator.netlify.app/"
-              description="An AI-powered app that generates personalized traditional Mexican Day of the Dead poems."
-            />
-          </div>
+          {featuredProjects.map((project) => (
+            <div key={project.title} className="col-sm-6 col-lg-4">
+              <ProjectCard
+                img={project.img}
+                title={project.title}
+                url={project.url}
+                description={project.description[lang]}
+                tags={project.tags[lang]}
+                resultQuote={findQuote(project.title)}
+                visitLabel={t.visit}
+                screenshotLabel={t.screenshotOf}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-3 mb-5">
+          <Link to="/projects" className="btn btn-hero-outline">
+            {t.viewAllBtn}
+          </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

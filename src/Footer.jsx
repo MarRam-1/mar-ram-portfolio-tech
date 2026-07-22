@@ -1,16 +1,28 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import translations from "./i18n/translations";
+import { useLanguage } from "./context/LanguageContext";
+import { WHATSAPP_URL } from "./constants";
 
 export default function Footer() {
+  const { lang } = useLanguage();
+  const t = translations[lang].footer;
+
   return (
     <footer className="footer">
       <div className="container text-center">
-        <p className="footer-tagline">
-          If you're looking for a passionate, organized, and easy-going
-          professional, I'd love to connect!
-        </p>
+        <h3 className="footer-title">{t.title}</h3>
+
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-whatsapp footer-whatsapp-btn"
+        >
+          {t.ctaBtn}
+        </a>
 
         <div className="footer-links">
           <a href="mailto:mariana.rmrz.96@gmail.com" className="footer-link footer-link-email">
@@ -32,10 +44,18 @@ export default function Footer() {
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
+          <a
+            href={WHATSAPP_URL}
+            className="footer-link footer-link-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faWhatsapp} />
+          </a>
         </div>
 
         <p className="footer-copy">
-          © 2026 Mariana Ramírez &nbsp;·&nbsp; Open source on{" "}
+          © 2026 Mariana Ramírez &nbsp;·&nbsp; {t.openSource}{" "}
           <a
             href="https://github.com/MarRam-1"
             target="_blank"
@@ -43,7 +63,7 @@ export default function Footer() {
           >
             GitHub
           </a>{" "}
-          &nbsp;·&nbsp; Built with React · Deployed on Netlify
+          &nbsp;·&nbsp; {t.copy}
         </p>
       </div>
     </footer>

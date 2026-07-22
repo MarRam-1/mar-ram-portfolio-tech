@@ -1,6 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 
-export default function ProjectCard({ img, title, url, description }) {
+export default function ProjectCard({
+  img,
+  title,
+  url,
+  description,
+  tags,
+  resultQuote,
+  visitLabel = "VISIT",
+  screenshotLabel = "Screenshot of the project",
+}) {
   const cardRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -23,9 +32,10 @@ export default function ProjectCard({ img, title, url, description }) {
   return (
     <div className="card shadow" ref={cardRef}>
       <div className="card-img-top view viewFold ">
+        <span className="sr-only">{`${screenshotLabel} ${title}`}</span>
         <div className="view-back">
           <a href={url} target="_blank" rel="noopener noreferrer">
-            VISIT
+            {visitLabel}
           </a>
         </div>
 
@@ -55,6 +65,16 @@ export default function ProjectCard({ img, title, url, description }) {
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text text-justify">{description}</p>
+        {tags && tags.length > 0 && (
+          <div className="project-tags">
+            {tags.map((tag) => (
+              <span key={tag} className="skill-tag project-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        {resultQuote && <p className="project-result">&ldquo;{resultQuote}&rdquo;</p>}
       </div>
     </div>
   );
