@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import translations from "./i18n/translations";
 import { useLanguage } from "./context/LanguageContext";
 import servicePricing from "./data/services";
@@ -28,6 +29,11 @@ export default function Services() {
                       <li key={feature}>{feature}</li>
                     ))}
                   </ul>
+                  {service.workNoteLink && (
+                    <Link to="/coordinacion" className="service-work-note-link">
+                      {service.workNoteLink}
+                    </Link>
+                  )}
                   <div className="service-footer">
                     <div className="service-price-wrap">
                       <span className="service-price">{prices[i]}</span>

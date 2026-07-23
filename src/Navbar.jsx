@@ -66,10 +66,19 @@ export default function Navbar() {
           <li className="nav-item">
             <NavLink
               className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
-              to="/projects"
+              to="/sitios-web"
               onClick={closeMobileMenu}
             >
               {t.projects}
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+              to="/coordinacion"
+              onClick={closeMobileMenu}
+            >
+              {t.coordination}
             </NavLink>
           </li>
           <li className="nav-item">

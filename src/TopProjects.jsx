@@ -32,7 +32,7 @@ export default function TopProjects() {
           ))}
         </div>
         <div className="text-center mt-3 mb-5">
-          <Link to="/projects" className="btn btn-hero-outline">
+          <Link to="/sitios-web" className="btn btn-hero-outline">
             {t.viewAllBtn}
           </Link>
         </div>

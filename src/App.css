@@ -731,6 +731,23 @@ header {
   top: -2px;
 }
 
+.service-work-note-link {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 12px;
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-soft);
+}
+
+.service-work-note-link:hover,
+.service-work-note-link:focus-visible {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transform: translateX(2px);
+}
+
 .service-footer {
   display: flex;
   flex-direction: column;
@@ -806,4 +823,73 @@ header {
 /* Footer WhatsApp CTA */
 .footer-whatsapp-btn {
   margin-bottom: 28px;
+}
+
+/* Coordination notes (full page + home preview) */
+.notes-section {
+  padding: 32px 0;
+}
+
+.notes-page {
+  padding-bottom: 60px;
+}
+
+.notes-subtitle {
+  color: var(--color-text-muted);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.note-card .card-body {
+  padding: 24px;
+}
+
+.note-title {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.note-text {
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.7;
+}
+
+.notes-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.note-preview-card .card-body {
+  padding: 24px;
+}
+
+.note-preview-title {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.note-preview-excerpt {
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+@media (min-width: 768px) {
+  .notes-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

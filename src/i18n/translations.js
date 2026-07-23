@@ -3,7 +3,8 @@ const translations = {
     nav: {
       home: "Inicio",
       about: "Sobre mí",
-      projects: "Proyectos",
+      projects: "Sitios Web",
+      coordination: "Coordinación",
       langToggle: "EN",
     },
     meta: {
@@ -18,9 +19,14 @@ const translations = {
           "Conoce a Mariana Ramírez, desarrolladora web freelance en México disponible para proyectos remotos en el extranjero, con experiencia en gestión de proyectos.",
       },
       projects: {
-        title: "Proyectos | Mariana Ramírez — Desarrolladora Web",
+        title: "Sitios Web | Mariana Ramírez — Desarrolladora Web",
         description:
           "Casos de sitios web para negocios en México y el extranjero, y proyectos técnicos de Mariana Ramírez: React, SEO, diseño responsive y más.",
+      },
+      coordination: {
+        title: "Coordinación de Proyectos | Mariana Ramírez",
+        description:
+          "Cómo pienso y cómo trabajo cuando coordino un proyecto: comunicación clara, documentación y herramientas digitales al servicio del equipo.",
       },
     },
     hero: {
@@ -57,6 +63,7 @@ const translations = {
             "Coordinación de personas y proveedores",
             "Reportes de avance",
           ],
+          workNoteLink: "Así trabajo →",
         },
       ],
       guarantee: "Hago todos los ajustes necesarios hasta que quedes satisfecho con el resultado final.",
@@ -64,12 +71,19 @@ const translations = {
       ctaBtn: "Cotiza tu proyecto",
     },
     projectsSection: {
-      pageHeading: "Proyectos de Mariana Ramírez",
-      featuredTitle: "Proyectos destacados",
-      moreTitle: "Más proyectos",
-      viewAllBtn: "Ver todos los proyectos",
+      pageHeading: "Sitios Web de Mariana Ramírez",
+      featuredTitle: "Sitios Web destacados",
+      moreTitle: "Más sitios web",
+      viewAllBtn: "Ver todos los sitios web",
       visit: "VISITAR",
       screenshotOf: "Captura de pantalla del proyecto",
+    },
+    notes: {
+      sectionTitle: "Notas destacadas",
+      viewAllBtn: "Ver todas las notas",
+      pageTitle: "Coordinación de proyectos",
+      pageSubtitle:
+        "Así pienso y así trabajo cuando coordino un proyecto, de cualquier tamaño y en cualquier sector.",
     },
     about: {
       greeting: "¡Hola! Soy",
@@ -120,7 +134,8 @@ const translations = {
     nav: {
       home: "Home",
       about: "About",
-      projects: "Projects",
+      projects: "Websites",
+      coordination: "Project Coordination",
       langToggle: "ES",
     },
     meta: {
@@ -135,9 +150,14 @@ const translations = {
           "Meet Mariana Ramírez, a freelance web developer based in Mexico, available for remote projects worldwide, with a background in project management.",
       },
       projects: {
-        title: "Projects | Mariana Ramírez — Web Developer",
+        title: "Websites | Mariana Ramírez — Web Developer",
         description:
           "Website case studies for businesses in Mexico and abroad, plus technical projects by Mariana Ramírez: React, SEO, responsive design, and more.",
+      },
+      coordination: {
+        title: "Project Coordination | Mariana Ramírez",
+        description:
+          "How I think and how I work when coordinating a project: clear communication, documentation, and digital tools that actually serve the team.",
       },
     },
     hero: {
@@ -174,6 +194,7 @@ const translations = {
             "Coordination of people and vendors",
             "Progress reports",
           ],
+          workNoteLink: "See how I work →",
         },
       ],
       guarantee: "I'll make every adjustment needed until you're fully satisfied with the final result.",
@@ -181,12 +202,19 @@ const translations = {
       ctaBtn: "Get a quote",
     },
     projectsSection: {
-      pageHeading: "Mariana Ramírez's projects",
-      featuredTitle: "Featured projects",
-      moreTitle: "More projects",
-      viewAllBtn: "View all projects",
+      pageHeading: "Mariana Ramírez's websites",
+      featuredTitle: "Featured websites",
+      moreTitle: "More websites",
+      viewAllBtn: "View all websites",
       visit: "VISIT",
       screenshotOf: "Screenshot of the project",
+    },
+    notes: {
+      sectionTitle: "Featured notes",
+      viewAllBtn: "See all notes",
+      pageTitle: "Project Coordination",
+      pageSubtitle:
+        "This is how I think and how I work when I coordinate a project, of any size and in any industry.",
     },
     about: {
       greeting: "Hi! I'm",

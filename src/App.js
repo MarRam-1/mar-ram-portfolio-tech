@@ -12,10 +12,12 @@ import ScrollToTop from "./ScrollToTop";
 import Header from "./Header";
 import Services from "./Services";
 import TopProjects from "./TopProjects";
+import FeaturedNotes from "./FeaturedNotes";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 import About from "./About";
 import Projects from "./Projects";
+import Notes from "./Notes";
 
 function Home() {
   const { lang } = useLanguage();
@@ -43,6 +45,7 @@ function Home() {
       <Header />
       <Services />
       <TopProjects />
+      <FeaturedNotes />
       <Testimonials />
     </>
   );
@@ -112,7 +115,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
+              <Route path="/sitios-web" element={<Projects />} />
+              <Route path="/coordinacion" element={<Notes />} />
             </Routes>
             <Footer />
           </BrowserRouter>

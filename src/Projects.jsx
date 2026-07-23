@@ -12,7 +12,7 @@ export default function Projects() {
   const meta = translations[lang].meta.projects;
   const t = translations[lang].projectsSection;
   const findQuote = (title) => testimonials.find((item) => item.business === title)?.quote[lang];
-  const url = `${SITE_URL}/projects`;
+  const url = `${SITE_URL}/sitios-web`;
   const image = `${SITE_URL}/MR-logo.png`;
 
   return (
