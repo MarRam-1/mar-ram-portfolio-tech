@@ -84,6 +84,8 @@ const translations = {
       pageTitle: "Coordinación de proyectos",
       pageSubtitle:
         "Así pienso y así trabajo cuando coordino un proyecto, de cualquier tamaño y en cualquier sector.",
+      readMore: "Leer más",
+      readLess: "Leer menos",
     },
     about: {
       greeting: "¡Hola! Soy",
@@ -142,7 +144,7 @@ const translations = {
       home: {
         title: "Mariana Ramírez | Web Developer",
         description:
-          "I build websites for businesses in Mexico and abroad, working 100% remote. Freelance web developer specializing in React, responsive design, and SEO.",
+          "I build websites for businesses in Mexico and abroad — a freelance web developer working 100% remote, specializing in React, responsive design, and SEO.",
       },
       about: {
         title: "About | Mariana Ramírez — Web Developer",
@@ -175,7 +177,7 @@ const translations = {
         {
           title: "Business websites",
           description:
-            "I build websites that make your business look professional and help customers find you. From a single landing page to a multi-page site, with responsive design and search engine optimization (SEO).",
+            "I build websites that make your business look professional and help customers find you — everything from a single landing page to a full multi-page site, with responsive design and SEO built right in.",
           features: [
             "Custom design",
             "Mobile-ready version",
@@ -214,7 +216,9 @@ const translations = {
       viewAllBtn: "See all notes",
       pageTitle: "Project Coordination",
       pageSubtitle:
-        "This is how I think and how I work when I coordinate a project, of any size and in any industry.",
+        "How I think and how I work when I'm coordinating a project — any size, any industry.",
+      readMore: "Read more",
+      readLess: "Show less",
     },
     about: {
       greeting: "Hi! I'm",

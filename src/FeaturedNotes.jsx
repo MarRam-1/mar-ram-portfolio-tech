@@ -4,8 +4,12 @@ import translations from "./i18n/translations";
 import { useLanguage } from "./context/LanguageContext";
 import notes from "./data/notes";
 
-// Notas destacadas en Home: la 1, la 3 y la 5 (índices 0, 2 y 4).
-const featuredIndexes = [0, 2, 4];
+// Notas destacadas en Home: la 1, la 3 y la 5 (índices 0, 2 y 4), cada una con su icono.
+const featured = [
+  { index: 0, icon: "add_task" },
+  { index: 2, icon: "communication" },
+  { index: 4, icon: "groups" },
+];
 
 export default function FeaturedNotes() {
   const { lang } = useLanguage();
@@ -16,13 +20,19 @@ export default function FeaturedNotes() {
       <div className="container">
         <h3 className="section-title mb-4">{t.sectionTitle}</h3>
         <div className="notes-preview-grid">
-          {featuredIndexes.map((i) => {
-            const note = notes[i];
+          {featured.map(({ index, icon }) => {
+            const note = notes[index];
             return (
               <div key={note.title.en} className="card shadow note-preview-card">
                 <div className="card-body">
+                  <span className="material-symbols-outlined note-preview-icon" aria-hidden="true">
+                    {icon}
+                  </span>
                   <h5 className="note-preview-title">{note.title[lang]}</h5>
                   <p className="note-preview-excerpt">{note.excerpt[lang]}</p>
+                  <Link to="/coordinacion" className="note-preview-link">
+                    {t.readMore}
+                  </Link>
                 </div>
               </div>
             );

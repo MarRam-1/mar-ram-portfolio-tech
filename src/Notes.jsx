@@ -1,9 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import translations from "./i18n/translations";
 import { useLanguage } from "./context/LanguageContext";
 import { SITE_URL } from "./constants";
 import notes from "./data/notes";
+
+function NoteBody({ blocks }) {
+  return blocks.map((block, i) =>
+    block.type === "ul" ? (
+      <ul key={i} className="note-list">
+        {block.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    ) : (
+      <p key={i} className="note-text text-justify">
+        {block.text}
+      </p>
+    )
+  );
+}
+
+function NoteCard({ note, lang, readMore, readLess }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="card shadow note-card">
+      <div className="card-body">
+        <h3 className="note-title">{note.title[lang]}</h3>
+        {expanded ? (
+          <NoteBody blocks={note.body[lang]} />
+        ) : (
+          <p className="note-text text-justify">{note.excerpt[lang]}</p>
+        )}
+        <button
+          type="button"
+          className={`note-toggle${expanded ? " note-toggle-expanded" : ""}`}
+          onClick={() => setExpanded((prev) => !prev)}
+          aria-expanded={expanded}
+        >
+          {expanded ? readLess : readMore}
+          <span className="material-symbols-outlined note-toggle-icon" aria-hidden="true">
+            expand_more
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Notes() {
   const { lang } = useLanguage();
@@ -34,12 +78,13 @@ export default function Notes() {
         <p className="notes-subtitle text-center mb-4">{t.pageSubtitle}</p>
         <div className="notes-list">
           {notes.map((note) => (
-            <div key={note.title.en} className="card shadow note-card">
-              <div className="card-body">
-                <h3 className="note-title">{note.title[lang]}</h3>
-                <p className="note-text text-justify">{note.text[lang]}</p>
-              </div>
-            </div>
+            <NoteCard
+              key={note.title.en}
+              note={note}
+              lang={lang}
+              readMore={t.readMore}
+              readLess={t.readLess}
+            />
           ))}
         </div>
       </div>

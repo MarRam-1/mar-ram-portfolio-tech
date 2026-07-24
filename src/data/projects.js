@@ -30,7 +30,7 @@ export const featuredProjects = [
     url: "https://mareapeoplepartners.com.mx",
     description: {
       es: "Diseñé y construí el sitio de Marea People Partners, la consultora de RH que co-fundé. Un sitio profesional que comunica sus servicios y transmite confianza.",
-      en: "I designed and built the website for Marea People Partners, the HR consulting firm I co-founded. A professional site that communicates their services and builds trust.",
+      en: "I designed and built the website for Marea People Partners, the HR consulting firm I co-founded — a professional site that communicates their services and builds trust.",
     },
     tags: {
       es: ["Sitio corporativo", "React", "Responsive"],
