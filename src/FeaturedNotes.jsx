@@ -18,7 +18,7 @@ export default function FeaturedNotes() {
   return (
     <section className="notes-section">
       <div className="container">
-        <h3 className="section-title mb-4">{t.sectionTitle}</h3>
+        <h2 className="section-title mb-4">{t.sectionTitle}</h2>
         <div className="notes-preview-grid">
           {featured.map(({ index, icon }) => {
             const note = notes[index];
@@ -28,7 +28,7 @@ export default function FeaturedNotes() {
                   <span className="material-symbols-outlined note-preview-icon" aria-hidden="true">
                     {icon}
                   </span>
-                  <h5 className="note-preview-title">{note.title[lang]}</h5>
+                  <h3 className="note-preview-title">{note.title[lang]}</h3>
                   <p className="note-preview-excerpt">{note.excerpt[lang]}</p>
                   <Link to="/coordinacion" className="note-preview-link">
                     {t.readMore}

@@ -901,10 +901,9 @@ header {
   gap: 2px;
   align-self: flex-start;
   margin-top: auto;
-  padding-top: 16px;
   background: none;
   border: none;
-  padding: 0;
+  padding: 16px 0 0;
   color: var(--color-accent);
   font-family: var(--font-body);
   font-weight: 600;
@@ -922,8 +921,22 @@ header {
   transition: transform var(--duration-fast) var(--ease-soft);
 }
 
-.note-toggle-expanded .note-toggle-icon {
+.note-card-expanded .note-toggle-icon {
   transform: rotate(180deg);
+}
+
+/* Full note text stays in the DOM always (see Notes.jsx) so it's crawlable;
+   only the visible state toggles here. */
+.note-full-body {
+  display: none;
+}
+
+.note-card-expanded .note-excerpt {
+  display: none;
+}
+
+.note-card-expanded .note-full-body {
+  display: block;
 }
 
 @media (min-width: 768px) {

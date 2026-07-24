@@ -13,7 +13,7 @@ export default function Services() {
   return (
     <section className="services-section">
       <div className="container">
-        <h3 className="section-title mb-2">{t.sectionTitle}</h3>
+        <h2 className="section-title mb-2">{t.sectionTitle}</h2>
         <p className="services-guarantee text-center mb-1">{t.guarantee}</p>
         <p className="services-guarantee text-center mb-4">{t.remoteNote}</p>
         <div className="row">
@@ -22,7 +22,7 @@ export default function Services() {
               <div className="card shadow service-card">
                 <div className="card-body">
                   {service.eyebrow && <p className="service-eyebrow">{service.eyebrow}</p>}
-                  <h5 className="card-title service-title">{service.title}</h5>
+                  <h3 className="card-title service-title">{service.title}</h3>
                   <p className="card-text text-justify">{service.description}</p>
                   <ul className="service-features">
                     {service.features.map((feature) => (

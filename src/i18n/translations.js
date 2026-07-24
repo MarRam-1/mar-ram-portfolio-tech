@@ -11,7 +11,7 @@ const translations = {
       home: {
         title: "Mariana Ramírez | Desarrolladora Web",
         description:
-          "Desarrolladora web freelance en México. Creo sitios para negocios locales y remotos en el extranjero, con React, diseño responsive y SEO.",
+          "Desarrolladora web freelance y coordinadora de proyectos en México. Creo sitios con React y SEO, y coordino proyectos para que nada se pierda.",
       },
       about: {
         title: "Sobre mí | Mariana Ramírez — Desarrolladora Web",
@@ -144,7 +144,7 @@ const translations = {
       home: {
         title: "Mariana Ramírez | Web Developer",
         description:
-          "I build websites for businesses in Mexico and abroad — a freelance web developer working 100% remote, specializing in React, responsive design, and SEO.",
+          "Freelance web developer and project coordinator based in Mexico, working remotely worldwide. I build websites with React and SEO, and keep projects on track.",
       },
       about: {
         title: "About | Mariana Ramírez — Web Developer",

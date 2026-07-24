@@ -25,17 +25,19 @@ function NoteCard({ note, lang, readMore, readLess }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="card shadow note-card">
+    <div className={`card shadow note-card${expanded ? " note-card-expanded" : ""}`}>
       <div className="card-body">
-        <h3 className="note-title">{note.title[lang]}</h3>
-        {expanded ? (
+        <h2 className="note-title">{note.title[lang]}</h2>
+        {/* The full text stays in the DOM at all times (toggled with CSS, not
+            unmounted) so search engines index the complete note, not just the
+            excerpt — only the visual state is collapsed for shorter viewing. */}
+        <p className="note-text note-excerpt text-justify">{note.excerpt[lang]}</p>
+        <div className="note-full-body">
           <NoteBody blocks={note.body[lang]} />
-        ) : (
-          <p className="note-text text-justify">{note.excerpt[lang]}</p>
-        )}
+        </div>
         <button
           type="button"
-          className={`note-toggle${expanded ? " note-toggle-expanded" : ""}`}
+          className="note-toggle"
           onClick={() => setExpanded((prev) => !prev)}
           aria-expanded={expanded}
         >

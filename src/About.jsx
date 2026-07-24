@@ -97,7 +97,7 @@ export default function About() {
       {/* CV */}
       <section className="about-cv">
         <div className="container text-center">
-          <h3 className="section-title">{t.techTitle}</h3>
+          <h2 className="section-title">{t.techTitle}</h2>
           <div className="about-skills-tech">
             {techSkills.map((skill) => (
               <span key={skill} className="skill-tag">
@@ -106,7 +106,7 @@ export default function About() {
             ))}
           </div>
 
-          <h3 className="section-title mt-5">{t.toolsTitle}</h3>
+          <h2 className="section-title mt-5">{t.toolsTitle}</h2>
           <div className="about-skills-tools">
             {tools.map((tool) => (
               <span key={tool} className="skill-tag skill-tag-tool">
@@ -115,14 +115,14 @@ export default function About() {
             ))}
           </div>
 
-          <h3 className="section-title mt-5">{t.softTitle}</h3>
+          <h2 className="section-title mt-5">{t.softTitle}</h2>
           <ul className="about-skills-soft">
             {t.softSkills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>
 
-          <h3 className="section-title mt-5">{t.eduTitle}</h3>
+          <h2 className="section-title mt-5">{t.eduTitle}</h2>
           <div
             className="edu-timeline"
             style={{ gridTemplateColumns: `repeat(${t.education.length}, 1fr)` }}

@@ -10,7 +10,7 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section">
       <div className="container">
-        <h3 className="section-title mb-4">{t.sectionTitle}</h3>
+        <h2 className="section-title mb-4">{t.sectionTitle}</h2>
         <div className="row">
           {testimonials.map((item, i) => (
             <div key={i} className="col-md-4">

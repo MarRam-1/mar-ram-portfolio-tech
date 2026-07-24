@@ -34,7 +34,7 @@ export default function Projects() {
       </Helmet>
       <div className="container">
         <h1 className="sr-only">{t.pageHeading}</h1>
-        <h3 className="section-title mt-5 mb-4">{t.featuredTitle}</h3>
+        <h2 className="section-title mt-5 mb-4">{t.featuredTitle}</h2>
         <div className="row">
           {featuredProjects.map((project) => (
             <div key={project.title} className="col-sm-6 col-lg-4">
@@ -52,7 +52,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <h3 className="section-title mt-5 mb-4">{t.moreTitle}</h3>
+        <h2 className="section-title mt-5 mb-4">{t.moreTitle}</h2>
         <div className="row">
           {moreProjects.map((project) => (
             <div key={project.title} className="col-sm-6 col-lg-4">

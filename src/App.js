@@ -75,7 +75,9 @@ const personSchema = {
     "JavaScript",
     "Diseño web responsive",
     "SEO",
-    "Gestión de proyectos",
+    "Coordinación de proyectos",
+    "Gestión de tiempos y equipos",
+    "Documentación de proyectos",
   ],
   makesOffer: [
     {

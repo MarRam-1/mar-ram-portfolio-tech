@@ -63,7 +63,7 @@ export default function ProjectCard({
       </div>
 
       <div className="card-body">
-        <h5 className="card-title">{title}</h5>
+        <h3 className="card-title">{title}</h3>
         <p className="card-text text-justify">{description}</p>
         {tags && tags.length > 0 && (
           <div className="project-tags">

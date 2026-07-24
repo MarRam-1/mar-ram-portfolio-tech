@@ -13,7 +13,7 @@ export default function TopProjects() {
 
   return (
     <section id="projects" className="top-projects w-75 m-auto">
-      <h3 className="section-title m-4 mt-5">{t.featuredTitle}</h3>
+      <h2 className="section-title m-4 mt-5">{t.featuredTitle}</h2>
       <div className="container">
         <div className="row">
           {featuredProjects.map((project) => (
